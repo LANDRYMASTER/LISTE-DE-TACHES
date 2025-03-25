@@ -9,7 +9,18 @@ body {
     min-height: 100vh;
     background: url(IMG/Website-Backgrounds.webp);
     background-size: cover;
+    background-position: 100vw;
     overflow-x: hidden;
+    animation: ciel 20s infinite ease;
+}
+
+@keyframes ciel {
+    0%, 100%{
+        background-size: 100%;
+    }
+    50%{
+        background-size: 150%;
+    }
 }
 
 header {
@@ -73,7 +84,7 @@ header {
 .list {
     max-width: 1000px;
     margin: auto;
-    margin-bottom: 30vh;
+    padding-bottom: 20vh;
 }
 
 .tache {
@@ -81,6 +92,7 @@ header {
     background-color: aliceblue;
     border-radius: 10px;
     margin: 10px auto;
+    transition: 1s;
 }
 
 .control {
@@ -97,7 +109,7 @@ header {
     font-size: 20px;
 }
 
-#clear {
+.clear {
     margin-right: 10px;
     width: 24px;
     aspect-ratio: 1;
@@ -108,19 +120,26 @@ header {
     transition: 0.5s;
 }
 
-#clear:hover {
+.clear:hover {
     fill: #c60c0c;
+}
+
+.plane {
+    transform: scale(0);
+    transition: 1s;
 }
 
 .tache p {
     padding: 5px;
+    font-size: 25px;
+    text-align: center;
 }
 
 .add-tache {
     position: fixed;
     bottom: 75px;
     right: 20px;
-    background-color: white;
+    background-color: #358bc5;
     border-radius: 10px;
     padding: 10px;
     transform: translateX(100vw);
@@ -134,6 +153,7 @@ header {
     opacity: 1;
     transform: translateX(0);
     z-index: 1;
+    transition: 1s;
 }
 
 form {
@@ -143,12 +163,13 @@ form {
 
 form textarea {
     width: 500px;
-    height: 100px;
+    height: 50px;
     resize: none;
     border: 1px solid #358bc5;
     border-radius: 5px 0 0 5px ;
     padding: 3px;
     outline: none;
+    font-size: 20px;
 }
 
 form div {
@@ -164,13 +185,13 @@ form input {
 }
 
 form div :nth-child(1) {
-    height: 70px;
+    height: 25px;
     border-radius: 0 5px 0 0;
     background-color: #358bc5;
 }
 
 form div :nth-child(2) {
-    height: 30px;
+    height: 25px;
     border-radius: 0 0 5px 0;
     background-color: #c10a00;
 }
@@ -188,7 +209,7 @@ form div :nth-child(2) {
 }
 
 .btn-add svg {
-    width: 50px;
+    width: 30px;
     aspect-ratio: 1;
     fill: none;
     stroke: #ffffff ;
