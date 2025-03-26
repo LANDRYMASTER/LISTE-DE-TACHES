@@ -304,9 +304,10 @@ footer svg {
     }
 
     .tache p {
-        padding: 2px;
+        padding: 5px;
         font-size: 15px;
         text-align: start;
+        
     }
 
     .control {
@@ -315,7 +316,7 @@ footer svg {
     }
     
     .control span {
-        font-size: 15px
+        font-size: 15px;
     }
     
     .clear {
