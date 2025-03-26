@@ -303,4 +303,24 @@ footer svg {
         font-size: 25px;
     }
 
+    .tache p {
+        padding: 2px;
+        font-size: 15px;
+    }
+
+    .control {
+        padding: 2px 2px 0 2px;
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .control span {
+        font-size: 15px
+    }
+    
+    .clear {
+        margin-right: 5px;
+        width: 20px;
+    }
+    
+
 }
