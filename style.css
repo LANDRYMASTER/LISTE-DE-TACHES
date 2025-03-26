@@ -27,6 +27,9 @@ header {
     margin-top: 15px;
     color: white;
     margin-bottom: 100px;
+    padding: 0 10px;
+    position: sticky;
+    top: 0;
 }
 
 .nav {
@@ -36,7 +39,7 @@ header {
     align-items: center;
     border-radius: 10px;
     background: url(IMG/OIP.jpg);
-    background-size: 50%;
+    background-size: cover;
     box-shadow: 0 0 3px #cdcbd6;
     margin: auto;
     position: relative;
@@ -84,7 +87,7 @@ header {
 .list {
     max-width: 1000px;
     margin: auto;
-    padding-bottom: 20vh;
+    padding: 0 10px 20vh 10px;
 }
 
 .tache {
@@ -95,6 +98,12 @@ header {
     transition: 1s;
 }
 
+.tache:hover {
+    transform: scaleY(1.2);
+    box-shadow: 0 0 5px #010304;
+    margin-bottom: 50px;
+}
+
 .control {
     width: 100%;
     background-color:#358bc5;
@@ -103,6 +112,11 @@ header {
     color: white;
     display: flex;
     justify-content: end;
+    transition: 0.5s;
+}
+
+.tache:hover .control {
+    background-color:#258443;
 }
 
 .control span {
@@ -125,9 +139,11 @@ header {
 }
 
 .plane {
-    transform: scale(0);
+    transform: scale(0) rotate(720deg);
     transition: 1s;
+    z-index: -1;
 }
+
 
 .tache p {
     padding: 5px;
@@ -138,14 +154,15 @@ header {
 .add-tache {
     position: fixed;
     bottom: 75px;
-    right: 20px;
+    right: 25vw;
     background-color: #358bc5;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     transform: translateX(100vw);
     transition: 1s;
     opacity: 0;
     transform: scale(1.2);
+    pointer-events: none;
 }
 
 .active {
@@ -154,6 +171,7 @@ header {
     transform: translateX(0);
     z-index: 1;
     transition: 1s;
+    pointer-events: auto;
 }
 
 form {
@@ -170,6 +188,7 @@ form textarea {
     padding: 3px;
     outline: none;
     font-size: 20px;
+    border-radius: 10px;
 }
 
 form div {
@@ -192,7 +211,7 @@ form div :nth-child(1) {
 
 form div :nth-child(2) {
     height: 25px;
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 5px 5px;
     background-color: #c10a00;
 }
 
@@ -233,4 +252,55 @@ footer svg {
     fill: #101b23;
     stroke: white ;
     stroke-width: 0;
+}
+
+@media screen and (max-width: 620px) {
+    header {
+        margin-top: 5px;
+    }
+
+    .add-tache {
+        bottom: 50px;
+        right: 10px;
+    }
+
+    .btn-add {
+        bottom: 55px;
+        right: 10px;
+    }
+
+    form textarea {
+        width: 300px;
+        font-size: 15px;
+    }
+
+    footer{
+        padding: 5px 0;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .btn-add {
+       border-radius: 50%;
+    }
+
+    form textarea {
+        width: 200px;
+        font-size: 15px;
+    }
+
+    .logo svg {
+        width: 30px;
+        stroke-width: 2;
+    }
+
+    .branding {
+        margin: 5px 0;
+    }
+
+    .branding h1 {
+        font-size: 25px;
+    }
+
 }
